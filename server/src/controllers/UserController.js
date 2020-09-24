@@ -50,15 +50,7 @@ const user = {
     );
   },
   currentUser: (req, res) => {
-    let user = null;
-    if (req.user) {
-      user = {
-        id: req.user._id,
-        username: req.user.username,
-      };
-    }
-
-    res.send({ currentUser: user });
+    res.send({ currentUser: req.user || null });
   },
 };
 
